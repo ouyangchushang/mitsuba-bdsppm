@@ -23,35 +23,30 @@ Pre-built binaries, as well as example scenes, are available on the [Mitsuba web
 
 
 ##############################################
-以上为mitsuba的介绍
+Introduction to Mitsuba
 
-我们在大作业中使用mitsuba0.6基于sppm实现了bdsppm全局光线渲染。
-源文件在/include/mitsuba及/src中，我们实现/修改的部分有：
+In our major project, we utilized Mitsuba 0.6 and implemented Bidirectional SPPM (BDSPPM) for global light rendering. The source files are located in /include/mitsuba and /src, and the implemented parts include:
 
 src/librender/gatherproc.cpp
 src/librender/particleproc.cpp
 src/librender/photon.cpp
 src/librender/photonmap.cpp
-以及include/mitsuba/render中对应的.h
+Corresponding .h files in /include/mitsuba/render
 src/integrators/photonmapper/bdsppm.cpp
+We also added a plugin in /src/integrators/Sconscript.
 
-并在src/integrators/Sconscript中添加了plugin
+The executable file is mitsuba.exe in the /dist folder. You can render the scene corresponding to the .xml file using the command line ./dist/mitsuba -o xxxxx.xml, or use the GUI by running mtsgui.exe in the /dist folder, opening the .xml file, and starting the rendering process with real-time tracking.
 
-可执行文件为/dist文件夹中的mitsuba.exe，可使用命令行./dist/mitsuba -o xxxxx.xml来渲染.xml文件对应的场景；
-或者使用gui，运行/dist文件夹中的mtsgui.exe并打开.xml文件，开始渲染后可实时跟踪进程。
-
-场景文件及相关.xml文件在/scenes中，与.xml同名的.exr文件是我们已有的渲染结果。
+Scene files and related .xml files are in /scenes. The .exr files with the same name as the .xml files are our existing rendering results.
 
 ###########################################################
-编译mitsuba0.6的方法：
-如果按照我们给的文件无法正常编译并打开mtsgui.exe，请采用以下方法（踩坑经验）：
-首先按照原文件编译mitsuba0.6（dependencies文件夹过大，我们没有保留）
-具体可参考教程https://zhuanlan.zhihu.com/p/359008593
-在编译完成后，如果mtsgui.exe无法运行，请删除刚刚编译好的/dist文件夹，并解压缩在根目录下的dist压缩包，该压缩包中的mtsgui.exe可正常运行。
-然后请将原来的include文件夹和src文件夹换成我们提供的同名文件夹
-再运行scons进行构建，即可完成。
+Compilation method for Mitsuba 0.6:
+If you encounter issues compiling and opening mtsgui.exe with the provided files, follow the steps below (based on our troubleshooting experience):
 
-如有问题，欢迎联系组内成员！
-祝您假期快乐！
+Compile Mitsuba 0.6 according to the original files (we did not keep the dependencies folder as it was too large). Refer to the tutorial at https://zhuanlan.zhihu.com/p/359008593 for specific instructions.
+After compilation, if mtsgui.exe fails to run, delete the newly compiled /dist folder and unzip the dist archive in the root directory. The mtsgui.exe in this archive should run properly.
+Replace the original include and src folders with the corresponding folders we provide.
+Run scons for building, and you should be good to go.
+
 
 
