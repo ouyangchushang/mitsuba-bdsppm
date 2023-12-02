@@ -160,6 +160,7 @@ public:
         Sampler *sensorSampler = (Sampler *) sched->getResource(samplerResID, 0);
 
         size_t sampleCount = sensorSampler->getSampleCount();
+        
         Vector2i cropSize = film->getCropSize();
         Point2i cropOffset = film->getCropOffset();
         Log(EInfo, "Starting render job (%ix%i, " SIZE_T_FMT " %s, " SIZE_T_FMT
@@ -366,7 +367,7 @@ public:
                     continue;
                 }
 
-                Float M = (Float) photonMap->estimateRadianceRaw(
+                Float M = (Float) photonMap->estimateRadianceRaw( 
                     g.its, g.radius, flux, m_maxDepth == -1 ? INT_MAX : (m_maxDepth-g.depth));
                 Float N = g.N;
 
