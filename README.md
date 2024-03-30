@@ -46,6 +46,7 @@ The executable file is mitsuba.exe in the /dist folder. You can render the scene
 Scene files and related .xml files are in /scenes. The .exr files with the same name as the .xml files are our existing rendering results.
 
 ###########################################################
+
 Compilation method for Mitsuba 0.6:
 If you encounter issues compiling and opening mtsgui.exe with the provided files, follow the steps below (based on our troubleshooting experience):
 
