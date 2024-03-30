@@ -27,12 +27,12 @@ Introduction to Mitsuba
 
 In our major project, we utilized Mitsuba 0.6 and implemented Bidirectional SPPM (BDSPPM) for global light rendering. The source files are located in /include/mitsuba and /src, and the implemented parts include:
 
-src/librender/gatherproc.cpp
-src/librender/particleproc.cpp
-src/librender/photon.cpp
-src/librender/photonmap.cpp
-Corresponding .h files in /include/mitsuba/render
-src/integrators/photonmapper/bdsppm.cpp
+src/librender/gatherproc.cpp\n
+src/librender/particleproc.cpp\n
+src/librender/photon.cpp\n
+src/librender/photonmap.cpp\n
+Corresponding .h files in /include/mitsuba/render\n
+src/integrators/photonmapper/bdsppm.cpp\n
 We also added a plugin in /src/integrators/Sconscript.
 
 The executable file is mitsuba.exe in the /dist folder. You can render the scene corresponding to the .xml file using the command line ./dist/mitsuba -o xxxxx.xml, or use the GUI by running mtsgui.exe in the /dist folder, opening the .xml file, and starting the rendering process with real-time tracking.
